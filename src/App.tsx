@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import Header from './components/Header'
 import Button from './components/Button'
+import Extension from './components/Extension'
+
 
 function App() {
   const [activeButton, setActiveButton] = useState<string>('All')
@@ -13,8 +15,8 @@ function App() {
   return (
     <>
       <Header/>
-      <main className='extensionsList container'>
-        <div className='flex space-between container'>
+      <main className='extensionsList container margin-460'>
+        <div className='flex space-between align-center container'>
           <h1>Extensions List</h1>
           <div className='flex'>
             <Button 
@@ -34,6 +36,9 @@ function App() {
             />
           </div>
         </div>
+        <ul className='container'>
+          <Extension />
+        </ul>
       </main>
     </>
   )

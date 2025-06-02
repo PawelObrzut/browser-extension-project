@@ -21,7 +21,7 @@ const Header = () => {
     setTheme((prev: Theme) => (prev === 'light' ? 'dark' : 'light'))
   }
   return (
-    <div className='header container flex space-between border-radius-1'>
+    <div className='header container flex space-between border-radius-1 margin-460 padding-460'>
       <Logo className='logo'/>
       <button
         onClick={toggleTheme}

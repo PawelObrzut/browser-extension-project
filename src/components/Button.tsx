@@ -10,7 +10,7 @@ const Button = (button: Props) => {
   return (
     <button
       aria-selected={button.active}
-      className='button border-radius-1'
+      className='button border-radius-2'
       onClick={button.onClick}
     >
       {button.label}

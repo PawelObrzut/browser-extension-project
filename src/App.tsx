@@ -1,13 +1,39 @@
 import { useState } from 'react'
 import './App.css'
 import Header from './components/Header'
+import Button from './components/Button'
 
 function App() {
+  const [activeButton, setActiveButton] = useState<string>('All')
+
+  const handleButtonClick = (label: string) => {
+    setActiveButton(label)
+  }
+  
   return (
     <>
       <Header/>
-      <main>
-
+      <main className='extensionsList container'>
+        <div className='flex space-between container'>
+          <h1>Extensions List</h1>
+          <div className='flex'>
+            <Button 
+              label="All" 
+              active={activeButton === 'All'}
+              onClick={() => handleButtonClick('All')} 
+            />
+            <Button 
+              label="Active" 
+              active={activeButton === 'Active'}
+              onClick={() => handleButtonClick('Active')} 
+            />
+            <Button 
+              label="Inactive" 
+              active={activeButton === 'Inactive'}
+              onClick={() => handleButtonClick('Inactive')} 
+            />
+          </div>
+        </div>
       </main>
     </>
   )

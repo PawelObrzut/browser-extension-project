@@ -34,11 +34,8 @@ p {
 
 /* set up the body */
 body {
-  font-family: var(--ff-sans-normal);
-  font-size: var(--fs-400);
-  color: hsl( var(--clr-white) );
-  background-color: hsl( var(--clr-dark) );
-  line-height: 1.5;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 16px;
   min-height: 100vh;
 }
 
@@ -66,6 +63,7 @@ html.light {
   --text-color: hsl(0, 0%, 0%);
   --box-color: hsl(200, 60%, 99%);
   --themeIcon-bg-color: hsl(0, 0%, 93%);
+  --activeButton-bg: hsl(3, 77%, 44%); 
 }
 
 html.dark {
@@ -73,12 +71,12 @@ html.dark {
   --text-color: hsl(0, 0%, 100%);
   --box-color: hsl(225, 23%, 24%);
   --themeIcon-bg-color: hsl(226, 11%, 37%);
+  --activeButton-bg: hsl(3, 86%, 64%);
 }
 
 body {
   background: var(--bg-color);
   color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 
@@ -106,10 +104,26 @@ body {
 
 
 /* ------------------- */
+/* Components          */
+/* ------------------- */
+/* Button */
+.button {
+  border: none;
+  background-color: var(--box-color);
+  color: var(--text-color);
+  padding: .5rem .75rem;
+  cursor: pointer;
+}
+
+.button[aria-selected="true"] {
+  background-color: var(--activeButton-bg);
+}
+
+/* ------------------- */
 /* Header              */
 /* ------------------- */
 .header {
-  margin: 2rem;
+  margin: 2rem 2rem 0 2rem;
   background: var(--box-color);
 }
 
@@ -122,4 +136,11 @@ body {
   border: none;
   cursor: pointer;
   padding: 0.75rem;
+}
+
+/* ------------------- */
+/* Extensions List     */
+/* ------------------- */
+.extensionsList {
+  
 }

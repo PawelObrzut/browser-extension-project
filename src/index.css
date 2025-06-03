@@ -136,6 +136,10 @@ body {
   border-radius: 2rem;
 }
 
+.grid {
+  display: grid;
+  gap: 1rem;
+}
 
 /* ------------------- */
 /* Components          */
@@ -235,10 +239,11 @@ input:checked + .slider:before {
 }
 
 /* ------------------- */
-/* Extensions List     */
+/* Filter Menu         */
 /* ------------------- */
-.extensionsList {
-  
+.filterMenu {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 

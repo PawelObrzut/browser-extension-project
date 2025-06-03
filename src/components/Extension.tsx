@@ -1,22 +1,29 @@
 import React from 'react'
-import devLens from '../assets/images/logo-devlens.svg'
 
-const Extension = () => {
+type Props = {
+  logo: string,
+  name: string,
+  description: string,
+  isActive: boolean,
+  // onClick: () => void,
+  onToggleActive: () => void,
+}
+
+const Extension = ({ logo, name, description, isActive, onToggleActive }: Props) => {
   return (
     <li className='extension flex border-radius-1'>
       <div className='flex'>
-          <img src={devLens} alt="devLens" className='extensionIconImg' />
-
+          <img src={logo} alt={name} className='extensionIconImg' />
         <section>
-          <h3>DevLens</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, blanditiis quibusdam!</p>
+          <h3>{name}</h3>
+          <p>{description}</p>
         </section>
       </div>
       <div className='flex space-between margin-top'>
         <button className='removeButton border-radius-2'>Remove</button>
-        <label className="switch">
-          <input type="checkbox" />
-          <span className="slider round"></span>
+        <label className='switch'>
+          <input type='checkbox' checked={isActive} onChange={onToggleActive} />
+          <span className='slider round'></span>
         </label>
       </div>
     </li>

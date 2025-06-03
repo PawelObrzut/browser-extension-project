@@ -45,9 +45,15 @@ function App() {
             />
           </div>
         </div>
-        <ul className='container grid'>
+        <ul className='extensionsList container grid'>
           {
-            extensions.map(extension => (
+            extensions
+            .filter((extension) => {
+              if (activeButton === 'All') return true;
+              if (activeButton === 'Active') return extension.isActive;
+              if (activeButton === 'Inactive') return !extension.isActive;
+            })
+            .map(extension => (
             <Extension 
               key={extension.name}
               logo={logos[`./assets/images/${extension.logo.split('/').pop()}`]}

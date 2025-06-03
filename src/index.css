@@ -271,6 +271,14 @@ input:checked + .slider:before {
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
+  .extensionsList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
+@media screen and (min-width: 985px) {
+  .extensionsList {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

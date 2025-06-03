@@ -21,6 +21,11 @@ function App() {
     setExtensions(updatedExtensions);
   }
 
+  const handleDeleteExtension = (name: string) => {
+    const updatedExtensions = extensions.filter(ext => ext.name !== name);
+    setExtensions(updatedExtensions);
+  }
+
   return (
     <>
       <Header/>
@@ -61,6 +66,7 @@ function App() {
               description={extension.description}
               isActive={extension.isActive}
               onToggleActive={() => handleToggleActive(extension.name)}
+              onDelete={() => handleDeleteExtension(extension.name)}
             />
           ))
           }
